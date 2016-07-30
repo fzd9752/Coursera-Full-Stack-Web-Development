@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+<head>
+  <title>Matching Faces Game</title>
+  <meta name = "author", content="fzd9752">
+  <style>
+
+    img {position: absolute;}
+    div {position: absolute;
+         width:500px;
+         height:500px;}
+    #rightSide {left: 500px;
+                border-left: 1px solid black}
+
+
+  </style>
+<body onload="generateFaces()">
+  <h2>Matching Game</h2>
+  <p>Click on the extra smiling face on the left.</p>
+  <button id = "replay" type = "button"
+           onclick = "replay(event)"> Play Again </button>
+  <div id="leftSide"></div>
+  <div id="rightSide"></div>
+
+
+  <script>
+  var level = 1;
+  var numberOfFaces = 5;
+  var theLeftSide = document.getElementById("leftSide");
+  var theRightSide = document.getElementById("rightSide");
+  var theBody = document.getElementsByTagName("body")[0];
+
+    function generateFaces() {
+      var i = numberOfFaces;
+
+      while (i > 0) {
+        var the_img = document.createElement("img");
+        the_img.src="http://home.cse.ust.hk/~rossiter/mooc/matching_game/smile.png";
+        the_img.style.top = Math.random() * 400 + "px";
+        the_img.style.left = Math.random() * 400 + "px";
+        theLeftSide.appendChild(the_img);
+        i -= 1;
+      }
+      the_clone = theLeftSide.cloneNode(true);
+      the_clone.removeChild(the_clone.lastChild);
+      theRightSide.appendChild(the_clone);
+
+      theLeftSide.lastChild.onclick = function nextLevel(event) {
+          event.stopPropagation();
+          numberOfFaces += 5;
+          level +=1;
+          delete_all_children(theLeftSide);
+          delete_all_children(theRightSide);
+          generateFaces();
+      };
+
+      theRightSide.onclick = function alarm() {
+        alert("Select the different smile at left side!")
+      };
+
+      theLeftSide.onclick = function gameOver() {
+        theLeftSide.lastChild.style.background = "green";
+        alert("Game Over!" + "\n\nYou achieved Level " + level +"!");
+        theLeftSide.onclick = null;
+        theRightSide.onclick = null
+        theLeftSide.lastChild.onclick = null;
+      };
+    }
+
+
+    function replay (event){
+      event.stopPropagation();
+      location.reload();
+    }
+
+    function delete_all_children(node) {
+      while (node.firstChild)
+        node.removeChild(node.firstChild);
+    }
+  </script>
+</body>
+
+</html>

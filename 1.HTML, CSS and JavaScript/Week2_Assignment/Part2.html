@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+<head>
+    <title>JavaScript Guessing Colour!</title>
+    <script>
+    var colour = ["Aqua", "Black", "Blue", "Brown", "Coral", "Crimson", "Gold", "LightCyan",
+                  "OrangeRed", "Pink", "Violet", "White", "Yellow"];
+    colour.sort()
+    var target;
+    var finished = false;
+    var guesses = 0;
+    var guessedcolor = []; //The colours has been entered but not the right answer
+    var last = ""; // Last guess result
+
+
+    function do_game() {
+        var random_number = Math.floor(Math.random() * colour.length);
+        target = colour[random_number];
+
+        while (!finished) {
+            alert("Computer selected " + target + " !"); // In case I forget the right answer -_-!!
+            if (guesses < 1) // The first time you enter a game
+              guess_input = prompt("I am thinking of a colour "+
+                                        "in below.\n\n" + colour.join(", ") +
+                                        "\n\nWhat is the colour?");
+
+            else // Show the colours you've entered
+              guess_input = prompt("You're approaching the right answer. "+
+                                      "Try again.\n\n" + colour.join(", ") +
+                                      "\n\nYou've gussed colour: " +
+                                      guessedcolor +
+                                      "\n\nYour last gussed colour " +
+                                      guessedcolor[guessedcolor.length-1] + " is " +
+                                      last +
+                                      "\n\nWhat is the colour?");
+            guesses += 1;
+            //Add the content you've just input if it's a qualified colour
+            i = colour.indexOf(guess_input);
+            guessedcolor.push(colour[i]);
+            //Remove the empty from the guessedcolor array
+            guessedcolor = guessedcolor.filter(function(n){ return n != undefined });
+            finished = check_guess();
+
+        }
+    }
+
+    function check_guess() {
+      if (i === -1) {
+          alert("You entered " + guess_input +
+          "\n\nI don’t recognize that color!");
+          return false;
+      }
+      if (guess_input > target) {
+          alert("Your input is alphabetically higher than mine!");
+          last = "alphabetically higher."
+          return false;
+      }
+      if (guess_input < target) {
+          alert("Your input is alphabetically lower than mine!");
+          last = "alphabetically lower."
+          return false;
+      }
+      alert("You are right!" +
+            ".\n\nIt took you " + guesses +
+            " times!");
+      myBody = document.getElementsByTagName("body")[0];
+      myBody.style.background= target;
+      return true;
+
+    }
+    </script>
+</head>
+    <body onload="do_game()">
+
+    </body>
+</html>
