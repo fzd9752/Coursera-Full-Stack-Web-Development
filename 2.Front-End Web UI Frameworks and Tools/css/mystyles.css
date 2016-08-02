@@ -90,11 +90,31 @@ address {
   font-size: 80%;
   margin: 0px;
 }
+<<<<<<< HEAD
 body {
   align: center;
   padding: 50px 0px 0px 0px;
   z-index: 0;
+||||||| merged common ancestors
+
+// Allow the login modal show in one line
+.modal-dialog{
+    position: relative;
+    display: table; //This is important
+    overflow-x: auto;
+    width: auto;
+    min-width: 300px;
+=======
+
+.modal-dialog{
+    position: relative;
+    display: table; //This is important
+    overflow-x: auto;
+    width: auto;
+    min-width: 300px;
+>>>>>>> 1d40319c4d1117a55db921fa6d39927b08a49ab2
 }
+<<<<<<< HEAD
 .tab-content {
   border-bottom: 1px solid #dddddd;
   border-left: 1px solid #dddddd;
@@ -103,6 +123,18 @@ body {
 }
 .affix {
   top: 100px;
+||||||| merged common ancestors
+
+// Fix Reserve Table text overflow when shrinking the button width
+#reservebtn {
+  text-overflow: ellipsis;
+  overflow: hidden;
+=======
+
+#reservebtn {
+  text-overflow: ellipsis;
+  overflow: hidden;
+>>>>>>> 1d40319c4d1117a55db921fa6d39927b08a49ab2
 }
 #carouselbtn {
   bottom: 0px;
