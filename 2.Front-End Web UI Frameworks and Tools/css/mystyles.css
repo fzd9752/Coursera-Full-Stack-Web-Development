@@ -79,7 +79,6 @@ body{
     min-height: 300px;
 }
 
-// Allow the login modal show in one line
 .modal-dialog{
     position: relative;
     display: table; //This is important
@@ -88,7 +87,6 @@ body{
     min-width: 300px;
 }
 
-// Fix Reserve Table text overflow when shrinking the button width
 #reservebtn {
   text-overflow: ellipsis;
   overflow: hidden;
