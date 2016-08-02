@@ -213,7 +213,7 @@
         <!-- Carouserl -->
         <div class="row row-content">
             <div class="col-xs-12">
-                <div id="mycarousel" class="carousel slide" data-ride="carousel">
+                <div id="mycarousel" class="carousel slide">
                     <!-- Wrapper for slides -->
                     <div class="carousel-inner" role="listbox">
                         <!-- Indicators -->
@@ -389,7 +389,9 @@
     <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <script>
         $(document).ready(function(){
-            $("#mycarousel").carousel({interval: 2000});
+            $("#mycarousel").carousel({
+              interval: 2000
+            });
             $("#carousel-pause").click(function(){
                 $("#mycarousel").carousel('pause');
             });
