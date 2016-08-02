@@ -64,8 +64,10 @@
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a data-toggle="modal" data-target="#loginModal">
-                            <span class="glyphicon glyphicon-log-in"></span> Login</a>
+
+<!-- !!The data-* attributes have been removed -->
+                        <a id="loginbtn"><span class="glyphicon glyphicon-log-in"></span> Login</a>
+
                     </li>
                 </ul>
             </div>
@@ -203,8 +205,11 @@
                 <!-- Reserve Button -->
                 <div class="col-xs-12 col-sm-2">
                     <p style="padding:40px;"></p>
-                    <a type="button" class="btn btn-warning btn-block" data-toggle="modal" href="#reserveform" id="reservebtn">Reserve Table</a>
-                </div </div>
+
+<!-- !!The data-* attributes have been removed -->
+                    <a type="button" class="btn btn-warning btn-block" href="#reserveform" id="reservebtn">Reserve Table</a>
+                </div>
+              </div>
             </div>
     </header>
 
@@ -398,6 +403,14 @@
             $("#carousel-play").click(function(){
                 $("#mycarousel").carousel('cycle');
             });
+// JavaScript code has been added to the page to trigger the Reserve Table modal.
+            $("#reservebtn").click(function(){
+                $("#reserveform").modal('show')
+            })
+// JavaScript code has been added to the page to trigger the Reserve Login modal.
+            $("#loginbtn").click(function(){
+                $("#loginModal").modal('show')
+            })
         })
     </script>
 
