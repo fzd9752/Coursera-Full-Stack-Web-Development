@@ -1,3 +1,20 @@
+// Allow the login modal show in one line
+.modal-dialog {
+  position: relative;
+  display: table; //This is important
+  overflow-x: auto;
+  overflow-y: auto;
+  width: auto;
+  min-width: 300px;
+
+}
+
+// Fix Reserve Table text overflow when shrinking the button width
+#reservebtn {
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
 .row-header {
   margin: 0px auto;
   padding: 0px 0px;
@@ -89,7 +106,7 @@ body {
 .affix {
   top: 100px;
 }
-#carouselButtons {
+#carouselbtn {
   bottom: 0px;
   position: absolute;
   right: 0px;

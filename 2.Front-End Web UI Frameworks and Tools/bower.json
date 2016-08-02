@@ -1,0 +1,26 @@
+{
+  "name": "conFusion",
+  "homepage": "https://github.com/fzd9752/Coursera-Full-Stack-Web-Development",
+  "authors": [
+    "fzd9752"
+  ],
+  "description": "Website for Coursera-Front-End Web UI Frameworks and Tools Course",
+  "main": "index.html",
+  "keywords": [
+    "conFusion",
+    "Fusion",
+    "Restaurant"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "font-awesome": "^4.6.3",
+    "bootstrap": "^3.3.7"
+  }
+}
