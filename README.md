@@ -27,7 +27,9 @@ The Specialization contains 5 Courses and 1 Capsotone Project, including:
 - [ ] :on: 3.Front-End JavaScript Frameworks: AngularJS
 	- During August 8 -
 	* AngularJS
-	* Course Work [Menu Page](conFusion-AngularJS/app/menu.html)
+	* Course Work
+		- [Menu Page](conFusion-AngularJS/app/menu.html)
+		- [Dish Detail](conFusion-AngularJS/app/dishdetail.html)
 - [ ] 4.Multiplatform Mobile App Development with Web Technologies
 - [ ] 5.Server-side Development with NodeJS
 
