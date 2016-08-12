@@ -32,7 +32,8 @@ var gulp = require('gulp'),
     changed = require('gulp-changed'),
     rev = require('gulp-rev'),
     browserSync = require('browser-sync'),
-    del = require('del');
+    del = require('del'),
+    ngannotate = require('gulp-ng-annotate');
 
     gulp.task('jshint', function() {
       return gulp.src('app/scripts/**/*.js')
@@ -47,19 +48,18 @@ var gulp = require('gulp'),
 
     // Default task
     gulp.task('default', ['clean'], function() {
-        gulp.start('htmlpage','usemin', 'imagemin','copyfonts');
+        gulp.start('usemin', 'imagemin','copyfonts');
     });
 
     // usemin
     gulp.task('usemin',['jshint'], function () {
-      return gulp.src(['./app/menu.html','./app/dishdetail.html'])
+      return gulp.src('./app/menu.html')
           .pipe(usemin({
             css:[minifycss(),rev()],
-            js: [uglify(),rev()]
+            js: [ngannotate(),uglify(),rev()]
           }))
           .pipe(gulp.dest('dist/'));
     });
-
     // Images
     gulp.task('imagemin', function() {
       return del(['dist/images']), gulp.src('app/images/**/*')
@@ -105,7 +105,7 @@ var gulp = require('gulp'),
       gulp.watch(['dist/**']).on('change', browserSync.reload);
         });
 
-        // minify new or changed HTML pages
+        /* minify new or changed HTML pages
         gulp.task('htmlpage', function() {
           var htmlSrc = 'app/*.html',
               htmlDst = 'dist';
@@ -115,3 +115,4 @@ var gulp = require('gulp'),
             .pipe(minifyHTML())
             .pipe(gulp.dest(htmlDst));
         });
+        */
