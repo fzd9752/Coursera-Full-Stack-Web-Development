@@ -22,9 +22,11 @@
                     <ul class="media-list tab-pane fade in active">
                       <li class="media" ng-repeat="dish in dishes | filter:{category: filtText} ">
                         <div class="media-left media-middle">
-                          <a href="#">
-                            <img class="media-object img-thumbnail" ng-src={{dish.image}} alt="Uthappizza">
-                          </a></div>
+                          <a ng-href="#/menu/{{dish._id}}">
+                            <img class="media-object img-thumbnail"
+                                ng-src={{dish.image}} alt="Uthappizza">
+                          </a>
+                        </div>
                         <div class="media-body">
                             <h2 class="media-heading">{{dish.name}}
                               <span class="label label-danger">{{dish.label}}</span>

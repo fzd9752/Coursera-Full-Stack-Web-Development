@@ -28,7 +28,8 @@ The Specialization contains 5 Courses and 1 Capsotone Project, including:
 	- During August 8 -
 	* AngularJS
 	* Course Work
-		- [Menu Page](conFusion-AngularJS/app/menu.html)
+		- [Whole Web](conFusion-AngularJS/app/index.html)
+		- [Menu](conFusion-AngularJS/app/menu.html)
 		- [Dish Detail](conFusion-AngularJS/app/dishdetail.html)
 - [ ] 4.Multiplatform Mobile App Development with Web Technologies
 - [ ] 5.Server-side Development with NodeJS
