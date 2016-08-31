@@ -53,13 +53,14 @@ var gulp = require('gulp'),
 
     // usemin
     gulp.task('usemin',['jshint'], function () {
-      return gulp.src('./app/*.html')
-          .pipe(usemin({
-            css:[minifycss(),rev()],
-            js: [ngannotate(),uglify(),rev()]
-          }))
-          .pipe(gulp.dest('dist/'));
+      return gulp.src('./app/**/*.html')
+        .pipe(usemin({
+          css:[minifycss(),rev()],
+          js: [ngannotate(),uglify(),rev()]
+      }))
+      .pipe(gulp.dest('dist/'));
     });
+
     // Images
     gulp.task('imagemin', function() {
       return del(['dist/images']), gulp.src('app/images/**/*')
