@@ -6,7 +6,7 @@
       "image": "images/uthapizza.png",
       "category": "mains",
       "label": "Hot",
-      "price": "4.99",
+      "price": 4.99,
       "description": "A unique combination of Indian Uthappam (pancake) and Italian pizza, topped with Cerignola olives, ripe vine cherry tomatoes, Vidalia onion, Guntur chillies and Buffalo Paneer.",
       "comments": [
         {
@@ -47,7 +47,7 @@
       "image": "images/zucchipakoda.png",
       "category": "appetizer",
       "label": "",
-      "price": "1.99",
+      "price": 1.99,
       "description": "Deep fried Zucchini coated with mildly spiced Chickpea flour batter accompanied with a sweet-tangy tamarind sauce",
       "comments": [
         {
@@ -209,7 +209,5 @@
       "description": "Award winning three-star Michelin chef with wide International experience having worked closely with whos-who in the culinary world, he specializes in creating mouthwatering Indo-Italian fusion experiences. He says, Put together the cuisines from the two craziest cultures, and you get a winning hit! Amma Mia!"
     }
   ],
-  "feedback": [
-
-  ]
+  "feedback": []
 }

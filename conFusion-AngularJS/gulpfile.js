@@ -43,7 +43,7 @@ var gulp = require('gulp'),
 
     // Clean
     gulp.task('clean', function() {
-        return del(['dist']);
+        return del(['json-server/public']);
     });
 
     // Default task
@@ -58,22 +58,22 @@ var gulp = require('gulp'),
           css:[minifycss(),rev()],
           js: [ngannotate(),uglify(),rev()]
       }))
-      .pipe(gulp.dest('dist/'));
+      .pipe(gulp.dest('json-server/public'));
     });
 
     // Images
     gulp.task('imagemin', function() {
-      return del(['dist/images']), gulp.src('app/images/**/*')
+      return del(['json-server/public/images']), gulp.src('app/images/**/*')
         .pipe(cache(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true })))
-        .pipe(gulp.dest('dist/images'))
+        .pipe(gulp.dest('json-server/public/images'))
         .pipe(notify({ message: 'Images task complete' }));
     });
 
     gulp.task('copyfonts', ['clean'], function() {
        gulp.src('./bower_components/font-awesome/fonts/**/*.{ttf,woff,eof,svg}*')
-       .pipe(gulp.dest('./dist/fonts'));
+       .pipe(gulp.dest('./json-server/public/fonts'));
        gulp.src('./bower_components/bootstrap/dist/fonts/**/*.{ttf,woff,eof,svg}*')
-       .pipe(gulp.dest('./dist/fonts'));
+       .pipe(gulp.dest('./json-server/public/fonts'));
     });
 
     // Watch
@@ -91,26 +91,26 @@ var gulp = require('gulp'),
           'app/styles/**/*.css',
           'app/images/**/*.png',
           'app/scripts/**/*.js',
-          'dist/**/*'
+          'json-server/public/**/*'
        ];
 
        browserSync.init(files, {
           server: {
-             baseDir: "dist",
+             baseDir: "json-server/public",
              index: "index.html",
           },
           reloadDelay: 1000,
        });
-            // Watch any files in dist/, reload on change
+            // Watch any files in json-server/public/, reload on change
 
 
-      gulp.watch(['dist/**']).on('change', browserSync.reload);
+      gulp.watch(['json-server/public/**']).on('change', browserSync.reload);
         });
 
         /* minify new or changed HTML pages
         gulp.task('htmlpage', function() {
           var htmlSrc = 'app/*.html',
-              htmlDst = 'dist';
+              htmlDst = 'json-server/public';
 
           gulp.src(htmlSrc)
             .pipe(changed(htmlDst))
