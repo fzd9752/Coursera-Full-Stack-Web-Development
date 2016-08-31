@@ -1,7 +1,10 @@
 'use strict';
 
 angular.module('confusionApp')
-        .constant("baseURL","http://localhost:3000/")
+
+        .constant("baseURL","https://fzd9752.github.io/Coursera-Full-Stack-Web-Development/conFusion-AngularJS/json-server/")
+
+        // .constant("baseURL","http://localhost:3000/")
 
         .service('menuFactory', ['$resource', 'baseURL', function($resource,baseURL) {
 
