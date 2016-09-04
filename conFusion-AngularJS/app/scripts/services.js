@@ -2,7 +2,7 @@
 
 angular.module('confusionApp')
 
-        .constant("baseURL","http://localhost:3000/")
+        .constant("baseURL","https://fzd9752.github.io/")
 
         .service('menuFactory', ['$resource', 'baseURL', function($resource,baseURL) {
 
